@@ -3,12 +3,13 @@ using System.Collections;
 
 public class CubeManager : MonoBehaviour {
 	public Rigidbody rb;
+	public WheelCollider wc;
 	public float speed = 0f;
 	public float rotate = 1f;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
-	
+		wc = GetComponent<WheelCollider>();
 	}
 	
 	// Update is called once per frame

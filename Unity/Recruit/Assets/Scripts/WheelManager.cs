@@ -14,7 +14,7 @@ public class WheelManager : MonoBehaviour {
 	void Update () {
 	
 		if(Input.GetKey(KeyCode.W)){
-			wc.motorTorque = 10;
+			wc.motorTorque = 1;
 		}
 	}
 }
