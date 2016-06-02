@@ -29,7 +29,6 @@ public class WheelManager: MonoBehaviour {
 				axleInfo.leftWheel.Collider.motorTorque = motor;
 				axleInfo.rightWheel.Collider.motorTorque = motor;
 			}
-	
 
 			axleInfo.leftWheel.View.transform.Rotate (0, motor, 0, Space.Self);
 			axleInfo.rightWheel.View.transform.Rotate (0, motor, 0, Space.Self);
