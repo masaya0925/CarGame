@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine.UI;
 public class WheelManager: MonoBehaviour {
 	[SerializeField]
 	private FuelManager _fuelManager = null;
-
+	[SerializeField]
+	private Text _text = null;
+	[SerializeField]
+	private float DownForce = 100f;
 	public List<AxleInfo> axleInfos; // the information about each individual axle
 	public float maxMotorTorque; // maximum torque the motor can apply to wheel
 	public float maxSteeringAngle; // maximum steer angle the wheel can have
@@ -29,6 +32,9 @@ public class WheelManager: MonoBehaviour {
 				axleInfo.leftWheel.Collider.motorTorque = motor;
 				axleInfo.rightWheel.Collider.motorTorque = motor;
 			}
+			if(_fuelManager.Value <= 0){
+				_text.text = "Game Over";
+			}
 
 			axleInfo.leftWheel.View.transform.Rotate (0, motor, 0, Space.Self);
 			axleInfo.rightWheel.View.transform.Rotate (0, motor, 0, Space.Self);
@@ -36,6 +42,7 @@ public class WheelManager: MonoBehaviour {
 	}
 }
 
+ 
 [System.Serializable]
 public class AxleInfo {
 	public Wheel leftWheel;
